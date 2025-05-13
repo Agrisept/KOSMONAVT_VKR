@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Информация - Кинотеатр Космонавт</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <header>
+        <div style="margin-top: 20px; width: 1700px; position: relative;">
+            <div style="position: absolute; left: 0;"><a href="index.html"><img src="recources/logo.png"></a></div>
+            <div style="position: absolute; right: 650px;"><ul><a href="information.html" class="nav-item" style="color: #977DFF;">Информация</a></ul></div>
+            <div style="position: absolute; right: 490px;"><ul><a href="#films" class="nav-item">Фильмы</a></ul></div>
+            <div style="position: absolute; right: 330px;"><ul><a href="#sessions" class="nav-item">Сеансы</a></ul></div>
+            <div style="position: absolute; right: 190px;"><img src="recources/Разделитель.png"></div>
+            <div style="position: absolute; right: 108px;"><ul><a href="#vkontakte" class="nav-item"><img src="recources/vkontakte.png"></a></ul></div>
+            <div style="position: absolute; right: 53px;"><ul><a href="#youtube" class="nav-item"><img src="recources/youtube.png"></a></ul></div>
+            <div style="position: absolute; right: 0px;"><ul><a href="#telegram" class="nav-item"><img src="recources/telegram.png"></a></ul></div>
+        </div> 
+        
+    </header>
+
+    <main>
+        <h1>Система лояльности</h1>
+        <p>В кинотеатре действует скидка 10% с понедельника по пятницу (кроме праздничных дней) на сеансы с 11:00 до 15:59 для следующих категорий граждан:</p>
+        
+        <ol>
+            <li>Пенсионеры</li>
+            <li>Ветераны BOB</li>
+            <li>Детям участников СВО</li>
+            <li>Военнослужащим срочной службы</li>
+            <li>Детям из малообеспеченных семей</li>
+            <li>Многодетным семьям (родителям и детям)</li>
+            <li>Лицам с ограниченными возможностями (инвалидам)</li>
+            <li>Учащимся и студентам (при коллективном посещении от 10 человек)</li>
+        </ol>
+
+        <p>Детям до трёх лет в сопровождении взрослых - бесплатно (без занятия отдельного места)</p>
+
+        <div class="divider"></div>
+
+    <section class="faq-container">
+        <h2>Частые вопросы</h2>
+        
+        <div class="faq-item">
+          <div class="faq-question">Детские билеты стоят дешевле?</div>
+          <div class="faq-answer">Ценовая политика кинотеатра "Космонавт" такова - цена одинакова, как для взрослых, так и для детей.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">Я хочу привести ребенка на сеанс 18+</div>
+          <div class="faq-answer">Мы не можем продать билет вашему ребёнку, нарушив требования по возрастным ограничениям. Приобрести билет можете Вы, лично, и подтвердить ваше решение на контроле, однако это правило распространяется только на категории 6+, 12+ и 16+.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">Я хочу прийти на сеанс IB+</div>
+          <div class="faq-answer">Подростки НЕ ДОСТИГШИЕ этого возраста, НИКАК НЕ МОГУТ ПРОЙТИ на сеанс, об этом гласит Федеральный закон от 29.12.2010 N 436-ФЗ «О защите детей от информации, причиняющей вред их здоровью и развитию».</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">Действуют ли моя Пушкинская карта в кинотеатре?</div>
+          <div class="faq-answer">Кинотеатр "Космонавт" предоставляет возможность оплачивать билеты по Пушкинской карте на некоторые фильмы.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">Как до вас дозвониться?</div>
+          <div class="faq-answer">Номер телефона кассы 8 (813) 61-2-58-52</div>
+        </div>
+        </section>
+    
+    <h2>Расположение кинотеатра</h2>
+    <section>
+        <p style="
+        font-size: 20px; line-height: 1;">пр. Ленина, 40, Тосно, Ленинградская область</p>
+
+        <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+        <script>
+          ymaps.ready(init);
+          function init() {
+            var myMap = new ymaps.Map("map", {
+              center: [59.539611, 30.881228],
+              zoom: 16,
+              controls: ['zoomControl']
+            });
+            
+            myMap.setType('yandex#map');
+            myMap.panes.get('ground').getElement().style.filter = 'grayscale(100%)';
+
+            var myPlacemark = new ymaps.Placemark(myMap.getCenter(), {}, {
+              preset: 'islands#violetDotIcon'
+            });
+
+            myMap.geoObjects.add(myPlacemark);
+          }
+        </script>
+
+        <div id="map" style="width: 100%; height: 400px; margin-top: 20px; margin-bottom: 200px;"></div>
+    </section>
+        
+        <div class="contact-info">
+          <p><strong>По всем вопросам:</strong></p>
+          <p>8 (813) 61-2-58-52</p>
+        </div>
+    </main>
+    <script src="main.js"></script>
+</body>
+</html>

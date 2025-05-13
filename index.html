@@ -7,10 +7,10 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
+    <header class="background-photo">
         <div style="margin-top: 20px; width: 1700px; position: relative;">
             <div style="position: absolute; left: 0;"><img src="recources/logo.png"></div>
-            <div style="position: absolute; right: 650px;"><ul><a href="#information" class="nav-item">Информация</a></ul></div>
+            <div style="position: absolute; right: 650px;"><ul><a href="information.html" class="nav-item">Информация</a></ul></div>
             <div style="position: absolute; right: 490px;"><ul><a href="#films" class="nav-item">Фильмы</a></ul></div>
             <div style="position: absolute; right: 330px;"><ul><a href="#sessions" class="nav-item">Сеансы</a></ul></div>
             <div style="position: absolute; right: 190px;"><img src="recources/Разделитель.png"></div>
@@ -18,16 +18,6 @@
             <div style="position: absolute; right: 53px;"><ul><a href="#youtube" class="nav-item"><img src="recources/youtube.png"></a></ul></div>
             <div style="position: absolute; right: 0px;"><ul><a href="#telegram" class="nav-item"><img src="recources/telegram.png"></a></ul></div>
         </div>
-
-        <script>
-            var timeElement = document.getElementById('currentTime');
-            function updateTime() {
-                var currentTime = new Date();
-                timeElement.textContent = currentTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-            }
-            setInterval(updateTime, 1000);
-            updateTime();
-        </script>
 
         <img style="margin-top: 350px;" src="recources/h1.png">
 

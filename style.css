@@ -51,12 +51,12 @@ header p {
 }
 a {
     text-decoration: none;
-    color: #fff;
 }
 .nav-item{
     font-family: Onest;
     font-weight: 300;
     font-size: 20px;
+    color: white;
 }
 .background-photo{
     background: url('recources/background.png') no-repeat center center/cover;
@@ -172,7 +172,7 @@ li {
       padding: 0 20px;
     }   
     .rating-value {
-      color: #ffd700;
+      color: #977DFF;
       font-weight: bold;
       margin-left: 10px;
     }
@@ -217,14 +217,24 @@ li {
       color: #fff;
     }
     .sessions {
+      font-family: "Montserrat";
       display: flex;
-      gap: 30px;
-      margin-bottom: 30px;
+      gap: 120px;
+      margin-bottom: 10px;
+      margin-top: 40px;
       flex-wrap: wrap;
     }
     .session-date {
+      color: #7F8081;
       font-size: 1.2rem;
       margin-bottom: 15px;
+      cursor: pointer;
+    }
+    .session-date:hover {
+      color: #ffffff;
+      font-size: 1.2rem;
+      margin-bottom: 15px;
+      cursor: pointer;
     }
     .session-times {
       display: flex;
@@ -232,14 +242,26 @@ li {
       margin-bottom: 30px;
     }
     .time-slot {
-      background-color: #333;
+      color: #7F8081;
+      font-size: 36px;
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .time-slot-between {
+      color: #7F8081;
+      font-size: 36px;
       padding: 10px 20px;
       border-radius: 4px;
       cursor: pointer;
       transition: background-color 0.3s;
     }
     .time-slot:hover {
-      background-color: #444;
+      color: #ffffff;
+    }
+    .time-slot:active {
+      color: #977DFF;
     }
     .contact-info {
       margin-top: 50px;
@@ -258,4 +280,71 @@ li {
     }
     .nav-link:hover {
       opacity: 0.8;
+    }
+    .screen-kino {
+      margin-bottom: 40px;
+    }
+
+    .seats {
+        display: grid;
+        grid-template-columns: repeat(16, 1fr);
+        gap: 7px;
+        margin: 60px 10px;
+    }
+    .center-seats {
+        display: flex;
+        align-items: center;
+        margin-right: 50px;
+    }
+    .seat {
+        width: 30px;
+        height: 30px;
+        background: gray;
+        border-radius: 10px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 12px;
+        transition: all 0.2s;
+    }
+    
+    .seat.selected {
+        background: #6c4cd3;
+    }
+    
+    .seat:hover {
+        transform: scale(1.1);
+    }
+    
+    .screen {
+        width: 700px;
+        margin: 0 auto 30px;
+        display: block;
+    }
+    
+    .seating-header {
+        display: flex;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    
+    .row-numbers {
+        display: flex;
+        flex-direction: column;
+        margin-right: 20px;
+        margin-top: 60px;
+    }
+    
+    .row-number {
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-family: 'Montserrat';
+        font-size: 15px;
+        margin-bottom: 7px;
     }

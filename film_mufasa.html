@@ -29,6 +29,7 @@
   <header>
     <div style="margin-top: 0px; width: 1700px; position: relative;">
       <div style="position: absolute; left: 0;"><img src="recources/Фильм_Муфаса.jpg" width="1700" height="800" alt="Муфаса Король Лев"></div>
+      <div style="position: absolute; left: 24px; top:30px;"><a href="information.html"><img src="recources/arrow_back.png"alt="Назад"></a></div>
       <div style="position: absolute; left: 0;" class="header-content">
         <h1 style="font-family: PaluiSPDemo-Bold;">МУФАСА <br> КОРОЛЬ ЛЕВ</h1>
         <div class="rating">
@@ -42,23 +43,46 @@
   <div class="container">
 
     <p class="description">
-      Осиротевший Муфаса знакомится с наследником королевских кровей по имени Така.
-      Вместе они отправляются в судьбоносное опасное путешествие, которое проверит
+      Осиротевший Муфаса знакомится с наследником королевских кровей по имени Така. <br>
+      Вместе они отправляются в судьбоносное опасное путешествие, которое проверит <br>
       их дружбу на прочность.
     </p>
 
-    <h2>Сеансы</h2>
+    <h2 style="margin-top: 100px;">Сеансы</h2>
     
     <div class="sessions">
-      <div class="session-date">11 марта</div>
-      <div class="session-date">12 марта</div>
-      <div class="session-date">13 марта</div>
+      <div class="session-date"><a>11 марта</a></div>
+      <div class="session-date"><a>12 марта</a></div>
+      <div class="session-date"><a>13 марта</a></div>
     </div>
     
     <div class="session-times">
       <div class="time-slot">10:00</div>
+      <div class="time-slot-between"> | </div>
       <div class="time-slot">16:00</div>
     </div>
+
+    <!-- ПОСАДОЧНЫЕ МЕСТА -->
+    <h2>Выбор мест</h2>
+    <div class="center-seats">
+      <div class="seating-header">
+        <div>Ряд</div>
+        <div class="row-numbers">
+          <div class="row-number">1</div>
+          <div class="row-number">2</div>
+          <div class="row-number">3</div>
+          <div class="row-number">4</div>
+          <div class="row-number">5</div>
+          <div class="row-number">6</div>
+          <div class="row-number">7</div>
+          <div class="row-number">8</div>
+        </div>
+        <div class="seats" id="seatsGrid"></div>
+      </div>
+    </div>
+
+
+    <div class="screen-kino"><img src="recources/screen.png"></div>
     
     <button class="btn">Купить билет</button>
     
@@ -73,26 +97,55 @@
     </nav>
   </div>
   
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      document.querySelector('.btn:nth-of-type(1)').addEventListener('click', function() {
-        alert('Открывается трейлер фильма');
-      });
-      
-      document.querySelector('.btn:nth-of-type(2)').addEventListener('click', function() {
-        alert('Переход к покупке билета');
-      });
-      
-      const timeSlots = document.querySelectorAll('.time-slot');
-      timeSlots.forEach(slot => {
-        slot.addEventListener('click', function() {
-          timeSlots.forEach(s => s.classList.remove('active'));
-          this.classList.add('active');
-          alert('Выбрано время: ' + this.textContent);
+<script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const seatsGrid = document.getElementById('seatsGrid');
+            const buyTicketBtn = document.getElementById('buyTicketBtn');
+            
+            // Создаем карту мест
+            function createSeatsMap() {
+                seatsGrid.innerHTML = '';
+                
+                // Создаем 8 рядов по 16 мест (всего 128 мест)
+                for (let row = 1; row <= 8; row++) {
+                    for (let seatNum = 1; seatNum <= 16; seatNum++) {
+                        const seat = document.createElement('div');
+                        seat.className = 'seat';
+                        seat.dataset.row = row;
+                        seat.dataset.num = seatNum;
+                        
+                        // При наведении показываем номер места
+                        seat.onmouseover = function() {
+                            if (!this.classList.contains('selected')) {
+                                this.textContent = seatNum;
+                            }
+                        };
+                        
+                        // При уходе курсора убираем номер, если место не выбрано
+                        seat.onmouseout = function() {
+                            if (!this.classList.contains('selected')) {
+                                this.textContent = '';
+                            }
+                        };
+                        
+                        // При клике выбираем/снимаем выбор места
+                        seat.onclick = function() {
+                            this.classList.toggle('selected');
+                            if (this.classList.contains('selected')) {
+                                this.textContent = seatNum;
+                            } else {
+                                this.textContent = '';
+                            }
+                        };
+                        
+                        seatsGrid.appendChild(seat);
+                    }
+                }
+            }
+            // Инициализируем карту мест
+            createSeatsMap();
         });
-      });
-    });
-  </script>
+    </script>
   <script src="main.js"></script>
 </body>
 </html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Муфаса Король Лев - Кинотеатр Космонавт</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div style="margin-top: 20px; width: 1700px; position: relative;">
+            <div style="position: absolute; left: 0;"><a href="index.html"><img src="recources/logo.png"></a></div>
+            <div style="position: absolute; right: 650px;"><ul><a href="information.html" class="nav-item">Информация</a></ul></div>
+            <div style="position: absolute; right: 490px;"><ul><a href="film_mufasa.html" class="nav-item" style="color: #977DFF;">Фильмы</a></ul></div>
+            <div style="position: absolute; right: 330px;"><ul><a href="#sessions" class="nav-item">Сеансы</a></ul></div>
+            <div style="position: absolute; right: 190px;"><img src="recources/Разделитель.png"></div>
+            <div style="position: absolute; right: 108px;"><ul><a href="https://vk.com/kino_kosmonavt_3d?from=groups" class="nav-item"><img src="recources/vkontakte.png"></a></ul></div>
+            <div style="position: absolute; right: 53px;"><ul><a href="https://vkvideo.ru/@kino_kosmonavt_3d" class="nav-item"><img src="recources/youtube.png"></a></ul></div>
+            <div style="position: absolute; right: 0px;"><ul><a href="https://t.me/+_sfp9-IrD_w5ZDMy" class="nav-item"><img src="recources/telegram.png"></a></ul></div>
+        </div> 
+        
+    </header>
+
+  <style>    
+    
+  </style>
+</head>
+<body>
+  <header>
+    <div style="margin-top: 0px; width: 1700px; position: relative;">
+      <div style="position: absolute; left: 0;"><img src="recources/Фильм_Муфаса.jpg" width="1700" height="800" alt="Муфаса Король Лев"></div>
+      <div style="position: absolute; left: 0;" class="header-content">
+        <h1 style="font-family: PaluiSPDemo-Bold;">МУФАСА <br> КОРОЛЬ ЛЕВ</h1>
+        <div class="rating">
+          Рейтинг Кинопоиска <span class="rating-value">7.8</span>
+        </div>
+        <a style="margin-top: 500px;" href="https://rutube.ru/video/d840e559038444de259a815b8dbbbf67/" class="btn">Смотреть трейлер</a>
+      </div>
+    </div>
+  </header>
+  
+  <div class="container">
+
+    <p class="description">
+      Осиротевший Муфаса знакомится с наследником королевских кровей по имени Така.
+      Вместе они отправляются в судьбоносное опасное путешествие, которое проверит
+      их дружбу на прочность.
+    </p>
+
+    <h2>Сеансы</h2>
+    
+    <div class="sessions">
+      <div class="session-date">11 марта</div>
+      <div class="session-date">12 марта</div>
+      <div class="session-date">13 марта</div>
+    </div>
+    
+    <div class="session-times">
+      <div class="time-slot">10:00</div>
+      <div class="time-slot">16:00</div>
+    </div>
+    
+    <button class="btn">Купить билет</button>
+    
+    <div class="contact-info">
+      <p>По всем вопросам:<br>+7 (813) 61-2-58-52</p>
+    </div>
+    
+    <nav>
+      <a href="#" class="nav-link">Информация</a>
+      <a href="#" class="nav-link">Фильмы</a>
+      <a href="#" class="nav-link">Сеансы</a>
+    </nav>
+  </div>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      document.querySelector('.btn:nth-of-type(1)').addEventListener('click', function() {
+        alert('Открывается трейлер фильма');
+      });
+      
+      document.querySelector('.btn:nth-of-type(2)').addEventListener('click', function() {
+        alert('Переход к покупке билета');
+      });
+      
+      const timeSlots = document.querySelectorAll('.time-slot');
+      timeSlots.forEach(slot => {
+        slot.addEventListener('click', function() {
+          timeSlots.forEach(s => s.classList.remove('active'));
+          this.classList.add('active');
+          alert('Выбрано время: ' + this.textContent);
+        });
+      });
+    });
+  </script>
+  <script src="main.js"></script>
+</body>
+</html>

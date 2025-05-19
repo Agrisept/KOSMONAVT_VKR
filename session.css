@@ -88,7 +88,6 @@ h2 {
     padding: 10px 20px;
     border-radius: 999px;
     box-shadow: 0 0 8px #ffffff6c;
-    cursor: pointer;
 }
 .dates .active {
     background: #6a64ff;
@@ -141,7 +140,6 @@ h2 {
     gap: 30px;
     margin-top: 100px;
     transform: translate(-140px);
-
 }
 .session-buttons button {
     background: #312561;
@@ -152,6 +150,12 @@ h2 {
     border-radius: 15px;
     box-shadow: 0 0 8px #6a64ff;
     cursor: pointer;
+}
+.unable-session{
+    cursor:no-drop;
+}
+.able-session{
+    cursor:pointer;
 }
 .footer {
     background: #0f0f0f;

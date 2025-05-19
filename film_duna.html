@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Дюна - Кинотеатр Космонавт</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+
+
+        .seat {
+            width: 30px;
+            height: 30px;
+            background: #977DFF;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            position: relative;
+            transition: all 0.2s;
+            font-size: 0;
+        }
+
+        .seat:hover {
+            transform: scale(1.1);
+        }
+
+        .seat.selected {
+            background: #FFC8F1;
+            box-shadow: 0 0 5px 2px #FFC8F1;
+            font-size: 10px;
+        }
+
+        .seat.occupied {
+            background: #7F8081;
+            cursor: not-allowed;
+        }
+
+        .seat:hover .seat-number,
+        .seat.selected .seat-number {
+            display: block;
+            font-size: 10px;
+        }
+
+        .seat.occupied .seat-number {
+            display: block;
+            color: rgba(255,255,255, 0.5);
+            font-size: 10px;
+        }
+
+        .screen-kino {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .screen-kino img {
+            width: 700px;
+            max-width: 100%;
+        }
+
+        .buy-ticket-container {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            margin: 30px 0;
+        }
+
+        .buy-btn {
+            background-color: #6c4cd3;
+            color: white;
+            padding: 15px 40px;
+            border-radius: 10px;
+            border: none;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .buy-btn:hover {
+            background-color: #5a3bbf;
+        }
+
+        .price-info {
+            font-size: 18px;
+            margin: 15px 0;
+            color: #977DFF;
+            font-weight: bold;
+            text-align: center;
+        }
+        
+        /* Новые стили для системы переключения дат и времени */
+        .sessions {
+            margin-bottom: 0px;
+            margin-top: 0px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+        
+        .session-dates {
+            display: flex;
+            gap: 35px;
+            margin: 0px 0px;
+        }
+        
+        .session-date {
+            background-color: #232323;
+            color: #7F8081;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 20px;
+        }
+        
+        .session-date:hover {
+            color: #ffffff
+        }
+        
+        .session-date.active {
+            color: #977DFF;
+        }
+        
+        .session-times {
+            display: flex;
+            gap: 15px;
+            margin: 50px 0px;
+        }
+        
+        .time-slot {
+            background-color: #232323;
+            color: #7F8081;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-family: 'Montserrat';
+        }
+        
+        .time-slot:hover {
+            color: #ffffff;
+        }
+        
+        .time-slot.active {
+            color: #977DFF;
+        }
+        
+        .time-slot-between {
+            color: #555;
+            display: flex;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div style="margin-top: 20px; width: 1700px; position: relative;">
+            <div style="position: absolute; left: 0;"><a href="index.html"><img src="recources/logo.png"></a></div>
+            <div style="position: absolute; right: 650px;"><ul><a href="information.html" class="nav-item">Информация</a></ul></div>
+            <div style="position: absolute; right: 490px;"><ul><a href="films.html" class="nav-item" style="color: #977DFF;">Фильмы</a></ul></div>
+            <div style="position: absolute; right: 330px;"><ul><a href="session.html" class="nav-item">Сеансы</a></ul></div>
+            <div style="position: absolute; right: 190px;"><img src="recources/Разделитель.png"></div>
+            <div style="position: absolute; right: 108px;"><ul><a href="https://vk.com/kino_kosmonavt_3d?from=groups" class="nav-item"><img src="recources/vkontakte.png"></a></ul></div>
+            <div style="position: absolute; right: 53px;"><ul><a href="https://vkvideo.ru/@kino_kosmonavt_3d" class="nav-item"><img src="recources/youtube.png"></a></ul></div>
+            <div style="position: absolute; right: 0px;"><ul><a href="https://t.me/+_sfp9-IrD_w5ZDMy" class="nav-item"><img src="recources/telegram.png"></a></ul></div>
+        </div> 
+    </header>
+
+    <header>
+        <div style="margin-top: 0px; width: 1700px; position: relative;">
+            <div style="position: absolute; left: 0;"><img src="recources/Фильм_Дюна.jpg" width="1700" height="800" alt="Дюна"></div>
+            <div style="position: absolute; left: 24px; top:30px;"><a href="films.html"><img src="recources/arrow_back.png" alt="Назад"></a></div>
+            <div style="position: absolute; left: 0;" class="header-content">
+                <h1 style="font-family: PaluiSPDemo-Bold;">ДЮНА</h1>
+                <div class="rating">
+                    Рейтинг Кинопоиска <span class="rating-value">7.7</span>
+                </div>
+                <a style="margin-top: 560px;" href="https://rutube.ru/video/a26d4228482e728747f2fdbdf5376602/?r=plwd" class="btn">Смотреть трейлер</a>
+            </div>
+        </div>
+    </header>
+  
+    <div class="container">
+        <p class="description">
+            Наследник знаменитого дома Атрейдесов Пол отправляется вместе с семьей на одну <br>
+            из самых опасных планет во Вселенной — Арракис. Здесь нет ничего, кроме песка, <br>
+            палящего солнца и гигантских чудовищ.
+        </p>
+
+        <h2 style="margin-top: 100px;">Сеансы</h2>
+        
+        <div class="sessions">
+            <div class="session-dates">
+                <button class="session-date active" onclick="showDate('2024-03-18', this)">11 марта</button>
+                <button class="session-date" onclick="showDate('2024-03-19', this)">12 марта</button>
+            </div>
+            
+            <div id="date-2024-03-18" class="date-container active">
+                <div class="session-times">
+                    <button class="time-slot active" onclick="showSession('2024-03-18', '12:30', this)">18:00</button>
+                    <div class="time-slot-between">|</div>
+                    <button class="time-slot" onclick="showSession('2024-03-18', '15:00', this)">20:00</button>
+                </div>
+            </div>
+            
+            <div id="date-2024-03-19" class="date-container">
+                <div class="session-times">
+                    <button class="time-slot active" onclick="showSession('2024-03-19', '10:00', this)">12:30</button>
+                    <div class="time-slot-between">|</div>
+                    <button class="time-slot" onclick="showSession('2024-03-19', '20:00', this)">15:00</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- ПОСАДОЧНЫЕ МЕСТА -->
+       
+        <div id="session-2024-03-18-12:30" class="seats-container active">
+            <p style="color: #7F8081;">Стоимость: 400 руб. за место</p>
+            <div class="price-info">Общая стоимость: <span id="price-2024-03-18-12:30">0</span> руб.</div>
+            <div class="center-seats">
+                <div class="seats-grid" id="seats-2024-03-18-12:30"></div>
+            </div>
+            <div class="screen-kino"><img src="recources/screen.png" width="800px"></div>
+            <div class="buy-ticket-container">
+                <button class="btn buy-btn" data-date="2024-03-18" data-time="12:30" data-price="400">Купить билет</button>
+            </div>
+        </div>
+        
+        <div id="session-2024-03-18-15:00" class="seats-container">
+            <p style="color: #7F8081;">Стоимость: 200 руб. за место</p>
+            <div class="price-info">Общая стоимость: <span id="price-2024-03-18-15:00">0</span> руб.</div>
+            <div class="center-seats">
+                <div class="seats-grid" id="seats-2024-03-18-15:00"></div>
+            </div>
+            <div class="screen-kino"><img src="recources/screen.png" width="800px"></div>
+            <div class="buy-ticket-container">
+                <button class="btn buy-btn" data-date="2024-03-18" data-time="15:00" data-price="200">Купить билет</button>
+            </div>
+        </div>
+        
+        <div id="session-2024-03-19-10:00" class="seats-container">
+            <p style="color: #7F8081;">Стоимость: 200 руб. за место</p>
+            <div class="price-info">Общая стоимость: <span id="price-2024-03-19-10:00">0</span> руб.</div>
+            <div class="center-seats">
+                <div class="seats-grid" id="seats-2024-03-19-10:00"></div>
+            </div>
+            <div class="screen-kino"><img src="recources/screen.png" width="800px"></div>
+            <div class="buy-ticket-container">
+                <button class="btn buy-btn" data-date="2024-03-19" data-time="10:00" data-price="200">Купить билет</button>
+            </div>
+        </div>
+
+        <div id="session-2024-03-19-20:00" class="seats-container">
+            <p style="color: #7F8081;">Стоимость: 450 руб. за место</p>
+            <div class="price-info">Общая стоимость: <span id="price-2024-03-19-20:00">0</span> руб.</div>
+            <div class="center-seats">
+                <div class="seats-grid" id="seats-2024-03-19-20:00"></div>
+            </div>
+            <div class="screen-kino"><img src="recources/screen.png" width="800px"></div>
+            <div class="buy-ticket-container">
+                <button class="btn buy-btn" data-date="2024-03-19" data-time="20:00" data-price="450">Купить билет</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let sessionsState = {};
+        const prices = {
+            '2024-03-18': {
+                '12:30': 400,
+                '15:00': 200
+            },
+            '2024-03-19': {
+                '10:00': 200,
+                '20:00': 450
+            }
+        };
+        function initSessionsState() {
+            const savedState = localStorage.getItem('cinemaSessionsState');
+            if (savedState) {
+                sessionsState = JSON.parse(savedState);
+            } else {
+                sessionsState = {
+                    '2024-03-18': {
+                        '12:30': { selected: [], occupied: [] },
+                        '15:00': { selected: [], occupied: [] }
+                    },
+                    '2024-03-19': {
+                        '10:00': { selected: [], occupied: [] },
+                        '20:00': { selected: [], occupied: [] }
+                    }
+                };
+            }
+        }
+        
+        function saveState() {
+            localStorage.setItem('cinemaSessionsState', JSON.stringify(sessionsState));
+        }
+        
+        
+        function showDate(date, button) {
+            document.querySelectorAll('.session-date').forEach(btn => {
+                btn.classList.remove('active');
+            });
+
+            button.classList.add('active');
+
+            document.querySelectorAll('.date-container').forEach(container => {
+                container.classList.remove('active');
+            });
+            
+            const dateContainer = document.getElementById(`date-${date}`);
+            dateContainer.classList.add('active');
+            
+            const firstTime = Object.keys(sessionsState[date])[0];
+            const firstTimeButton = dateContainer.querySelector('.time-slot');
+            showSession(date, firstTime, firstTimeButton);
+        }
+        
+        function showSession(date, time, button) {
+            const dateContainer = document.getElementById(`date-${date}`);
+            if (!dateContainer) return;
+            
+            dateContainer.querySelectorAll('.time-slot').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            if (button) button.classList.add('active');
+            
+            document.querySelectorAll('.seats-container').forEach(container => {
+                if (container.id.startsWith('session-')) {
+                    container.classList.remove('active');
+                }
+            });
+            
+            const sessionContainer = document.getElementById(`session-${date}-${time}`);
+            if (sessionContainer) {
+                sessionContainer.classList.add('active');
+                if (sessionContainer.querySelector('.seat') === null) {
+                    renderSeats(date, time);
+                }
+            }
+            
+            updatePrice(date, time);
+        }
+        
+        function updatePrice(date, time) {
+            const selectedCount = sessionsState[date][time].selected.length;
+            const priceElement = document.getElementById(`price-${date}-${time}`);
+            if (priceElement) {
+                priceElement.textContent = selectedCount * prices[date][time];
+            }
+        }
+        
+        function renderSeats(date, time) {
+            const container = document.getElementById(`seats-${date}-${time}`);
+            if (!container) {
+                console.error(`Контейнер seats-${date}-${time} не найден`);
+                return;
+            }
+            
+            container.innerHTML = '';
+            
+            for (let row = 1; row <= 8; row++) {
+                for (let seatNum = 1; seatNum <= 16; seatNum++) {
+                    const seatId = `${row}-${seatNum}`;
+                    const seat = document.createElement('div');
+                    seat.className = 'seat';
+                    seat.textContent = seatId;
+                    seat.dataset.seat = seatNum;
+                    seat.dataset.row = row;
+                    seat.dataset.date = date;
+                    seat.dataset.time = time;
+                    
+                    const seatNumber = document.createElement('span');
+                    seatNumber.className = 'seat-number';
+                    seatNumber.textContent = seatNum;
+                    seat.appendChild(seatNumber);
+
+                    if (sessionsState[date][time].occupied.includes(seatId)) {
+                        seat.classList.add('occupied');
+                    } else if (sessionsState[date][time].selected.includes(seatId)) {
+                        seat.classList.add('selected');
+                    }
+                    
+                    seat.addEventListener('click', function() {
+                        if (!this.classList.contains('occupied')) {
+                            this.classList.toggle('selected');
+                            const seatId = `${this.dataset.row}-${this.dataset.seat}`;
+                            const date = this.dataset.date;
+                            const time = this.dataset.time;
+                            
+                            if (this.classList.contains('selected')) {
+                                if (!sessionsState[date][time].selected.includes(seatId)) {
+                                    sessionsState[date][time].selected.push(seatId);
+                                }
+                            } else {
+                                sessionsState[date][time].selected = sessionsState[date][time].selected.filter(id => id !== seatId);
+                            }
+                            
+                            updatePrice(date, time);
+                        }
+                    });
+                    
+                    container.appendChild(seat);
+                }
+            }
+        }
+        
+        function buyTickets(date, time) {
+            const selected = sessionsState[date][time].selected;
+            if (selected.length === 0) {
+                alert('Пожалуйста, выберите места!');
+                return;
+            }
+            
+            sessionsState[date][time].occupied.push(...selected);
+            sessionsState[date][time].selected = [];
+            
+            renderSeats(date, time);
+            updatePrice(date, time);
+            saveState();
+            
+            alert(`Билеты на ${date} в ${time} куплены!`);
+        }
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            initSessionsState();
+            
+            const firstDate = Object.keys(sessionsState)[0];
+            const firstDateButton = document.querySelector(`.session-date[onclick*="${firstDate}"]`);
+            if (firstDateButton) {
+                showDate(firstDate, firstDateButton);
+            }
+            
+            document.querySelectorAll('.buy-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const date = this.dataset.date;
+                    const time = this.dataset.time;
+                    buyTickets(date, time);
+                });
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelector('.btn:nth-of-type(1)').addEventListener('click', function() {
+                alert('Открывается трейлер фильма');
+            });
+        });
+    </script>
+</body>
+</html>

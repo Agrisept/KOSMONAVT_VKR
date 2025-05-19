@@ -39,4 +39,3 @@ timeSlots.forEach(slot => {
   });
 });
 });
-

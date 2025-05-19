@@ -17,7 +17,7 @@ ymaps.ready(init);
     myMap.panes.get('ground').getElement().style.filter = 'grayscale(100%)'
     var myPlacemark = new ymaps.Placemark(myMap.getCenter(), {}, {
       preset: 'islands#violetDotIcon'
-    } 
+    })
     myMap.geoObjects.add(myPlacemark);
   }
 
@@ -39,3 +39,4 @@ timeSlots.forEach(slot => {
   });
 });
 });
+

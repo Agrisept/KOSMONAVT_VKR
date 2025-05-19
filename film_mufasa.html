@@ -6,63 +6,7 @@
     <title>Муфаса Король Лев - Кинотеатр Космонавт</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap');
-        
-        @font-face {
-            font-family: "PaluiSPDemo-Bold";
-            src: url("recources/PaluiSPDemo-Bold.otf") format("opentype");
-        }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Onest', sans-serif;
-            background-color: #232323;
-            color: #fff;
-        }
-        
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .seats-container {
-            display: none;
-            width: 100%;
-        }
-
-        .seats-container.active {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        
-        .date-container {
-            display: none;
-            width: 100%;
-        }
-
-        .date-container.active {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .seats-grid {
-            display: grid;
-            grid-template-columns: repeat(16, 30px);
-            gap: 15px;
-            margin: 20px 0;
-        }
 
         .seat {
             width: 30px;
@@ -213,8 +157,8 @@
         <div style="margin-top: 20px; width: 1700px; position: relative;">
             <div style="position: absolute; left: 0;"><a href="index.html"><img src="recources/logo.png"></a></div>
             <div style="position: absolute; right: 650px;"><ul><a href="information.html" class="nav-item">Информация</a></ul></div>
-            <div style="position: absolute; right: 490px;"><ul><a href="film_mufasa.html" class="nav-item" style="color: #977DFF;">Фильмы</a></ul></div>
-            <div style="position: absolute; right: 330px;"><ul><a href="#sessions" class="nav-item">Сеансы</a></ul></div>
+            <div style="position: absolute; right: 490px;"><ul><a href="films.html" class="nav-item" style="color: #977DFF;">Фильмы</a></ul></div>
+            <div style="position: absolute; right: 330px;"><ul><a href="session.html" class="nav-item">Сеансы</a></ul></div>
             <div style="position: absolute; right: 190px;"><img src="recources/Разделитель.png"></div>
             <div style="position: absolute; right: 108px;"><ul><a href="https://vk.com/kino_kosmonavt_3d?from=groups" class="nav-item"><img src="recources/vkontakte.png"></a></ul></div>
             <div style="position: absolute; right: 53px;"><ul><a href="https://vkvideo.ru/@kino_kosmonavt_3d" class="nav-item"><img src="recources/youtube.png"></a></ul></div>
@@ -365,6 +309,7 @@
             localStorage.setItem('cinemaSessionsState', JSON.stringify(sessionsState));
         }
         
+        
         // Переключение между датами
         function showDate(date, button) {
             // Снимаем активность со всех кнопок дат
@@ -448,6 +393,7 @@
                     const seatId = `${row}-${seatNum}`;
                     const seat = document.createElement('div');
                     seat.className = 'seat';
+                    seat.textContent = seatId;
                     seat.dataset.seat = seatNum;
                     seat.dataset.row = row;
                     seat.dataset.date = date;

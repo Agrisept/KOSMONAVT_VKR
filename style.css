@@ -1,22 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap');
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 @import url('https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap');
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 @font-face {
   font-family: "PaluiSPDemo-Bold";
   src: url("recources/PaluiSPDemo-Bold.otf") format("opentype");
 }
-
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 body {
   font-family: Onest;
   background-color: #232323;
@@ -44,7 +36,7 @@ header p {
   max-width: 1100px;
   font-size: 24px;
   line-height: 1.3;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat";
   font-optical-sizing: auto;
   font-weight: 300;
   font-style: normal;
@@ -289,9 +281,28 @@ h2 {
 }
 .seats-container {
   display: none;
+  width: 100%;
 }    
 .seats-container.active {
   display: block;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.date-container {
+  display: none;
+  width: 100%;
+}
+.date-container.active {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.seats-grid {
+  display: grid;
+  grid-template-columns: repeat(16, 30px);
+  gap: 15px;
+  margin: 20px 0;
 }
 .contact-info {
   margin-top: 50px;
@@ -327,11 +338,12 @@ nav {
 .seat {
   width: 30px;
   height: 30px;
-  background: gray;
-  border-radius: 10px;
+  background: #977DFF;
+  border-radius: 5px;
   cursor: pointer;
   display: flex;
   align-items: center;
+  position: relative;
   justify-content: center;
   color: white;
   font-family: 'Montserrat', sans-serif;

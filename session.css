@@ -23,10 +23,6 @@ a {
   text-decoration: none;
   color: white;
 }
-a:hover {
-  text-decoration: none;
-  color: #977DFF;
-}
 
 .main {
   max-width: 1100px;
@@ -78,7 +74,7 @@ h2 {
     padding: 0 20px;
     display: flex;
     transform: translate(100px);
-    gap: 10px;
+    gap: 20px;
     flex-wrap: wrap;
 }
 .dates button {
@@ -88,10 +84,14 @@ h2 {
     padding: 10px 20px;
     border-radius: 999px;
     box-shadow: 0 0 8px #ffffff6c;
+    font-family: Montserrat;
+    font-size: 20px;
 }
 .dates .active {
-    background: #6a64ff;
-    box-shadow: 0 0 8px #6a64ff;
+    background: #232323;
+    box-shadow: 0 0 8px #6555A5;
+    color: #977DFF;
+    font-weight: 600;
 }
 .film {
     max-width: 1700px;

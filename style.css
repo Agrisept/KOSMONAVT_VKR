@@ -84,16 +84,19 @@ li {
 }
 .faq-item {
   margin-bottom: 20px;
+  cursor: default;
 }
 .faq-question {
-  background-color: #2a2a2a;
+  background-color: #7F8081;
+  font-family: Onest;
+  font-size: 20px;
+  font-weight: 300;
   padding: 15px 20px;
   font-weight: bold;
-  cursor: pointer;
   position: relative;
 }
 .faq-answer {
-  background-color: #222;
+  background-color: #616161;
   padding: 15px 20px;
   margin-top: 0;
 }
@@ -381,4 +384,42 @@ nav {
   font-family: 'Montserrat';
   font-size: 15px;
   margin-bottom: 7px;
+}
+.footer {
+  background: #0f0f0f;
+  padding: 30px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  flex-wrap: wrap;
+}
+
+.footer-info {
+  text-align: center;
+  font-size: 13px;
+}
+
+.footer-nav a {
+  line-height: 30px;
+  display: flex;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+  margin: 5px 0;
+  gap: 8px;
+  font-size: 13px;
+  transform: translateY(-8px);
+}
+
+.footer-logo img {
+  width: 80px;
+}
+.img-footer {
+  display: grid;
+  justify-items: start;
+  margin-right: 20px
+}
+.footer-info1 {
+  display: flex;
 }

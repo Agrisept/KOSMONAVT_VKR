@@ -3,153 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Муфаса Король Лев - Кинотеатр Космонавт</title>
+    <title>Обезьяна - Кинотеатр Космонавт</title>
     <link rel="stylesheet" href="style.css">
     <style>
-
-
-        .seat {
-            width: 30px;
-            height: 30px;
-            background: #977DFF;
-            border-radius: 5px;
-            display: flex;
-            align-items: center;
-            cursor: pointer;
-            position: relative;
-            transition: all 0.2s;
-            font-size: 0;
-        }
-
-        .seat:hover {
-            transform: scale(1.1);
-        }
-
-        .seat.selected {
-            background: #FFC8F1;
-            box-shadow: 0 0 5px 2px #FFC8F1;
-            font-size: 10px;
-        }
-
-        .seat.occupied {
-            background: #7F8081;
-            cursor: not-allowed;
-        }
-
-        .seat:hover .seat-number,
-        .seat.selected .seat-number {
-            display: block;
-            font-size: 10px;
-        }
-
-        .seat.occupied .seat-number {
-            display: block;
-            color: rgba(255,255,255, 0.5);
-            font-size: 10px;
-        }
-
-        .screen-kino {
-            margin: 20px 0;
-            text-align: center;
-        }
-
-        .screen-kino img {
-            width: 700px;
-            max-width: 100%;
-        }
-
-        .buy-ticket-container {
-            display: flex;
-            justify-content: center;
-            width: 100%;
-            margin: 30px 0;
-        }
-
-        .buy-btn {
-            background-color: #6c4cd3;
-            color: white;
-            padding: 15px 40px;
-            border-radius: 10px;
-            border: none;
-            font-size: 1.2rem;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .buy-btn:hover {
-            background-color: #5a3bbf;
-        }
-
-        .price-info {
-            font-size: 18px;
-            margin: 15px 0;
-            color: #977DFF;
-            font-weight: bold;
-            text-align: center;
-        }
-        
-        /* Новые стили для системы переключения дат и времени */
-        .sessions {
-            margin-bottom: 0px;
-            margin-top: 0px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 100%;
-        }
-        
-        .session-dates {
-            display: flex;
-            gap: 35px;
-            margin: 0px 0px;
-        }
-        
-        .session-date {
-            background-color: #232323;
-            color: #7F8081;
-            border: none;
-            cursor: pointer;
-            transition: all 0.3s;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 20px;
-        }
-        
-        .session-date:hover {
-            color: #ffffff
-        }
-        
-        .session-date.active {
-            color: #977DFF;
-        }
-        
-        .session-times {
-            display: flex;
-            gap: 15px;
-            margin: 50px 0px;
-        }
-        
-        .time-slot {
-            background-color: #232323;
-            color: #7F8081;
-            border: none;
-            cursor: pointer;
-            transition: all 0.3s;
-            font-family: 'Montserrat';
-        }
-        
-        .time-slot:hover {
-            color: #ffffff;
-        }
-        
-        .time-slot.active {
-            color: #977DFF;
-        }
-        
-        .time-slot-between {
-            color: #555;
-            display: flex;
-            align-items: center;
-        }
+    .seat {
+        width: 30px;
+        height: 30px;
+        background: #977DFF;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        position: relative;
+        transition: all 0.2s;
+        font-size: 0;
+    }
+    .seat:hover {
+        transform: scale(1.1);
+    }
+    .seat.selected {
+        background: #FFC8F1;
+        box-shadow: 0 0 5px 2px #FFC8F1;
+        font-size: 10px;
+    }
+    .seat.occupied {
+        background: #7F8081;
+        cursor: not-allowed;
+    }
+    .seat:hover .seat-number,
+    .seat.selected .seat-number {
+        display: block;
+        font-size: 10px;
+    }
+    .seat.occupied .seat-number {
+        display: block;
+        color: rgba(255,255,255, 0.5);
+        font-size: 10px;
+    }
+    .screen-kino {
+        margin: 20px 0;
+        text-align: center;
+    }
+    .screen-kino img {
+        width: 700px;
+        max-width: 100%;
+    }
+    .buy-ticket-container {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin: 30px 0;
+    }
+    .buy-btn {
+        background-color: #6c4cd3;
+        color: white;
+        padding: 15px 40px;
+        border-radius: 10px;
+        border: none;
+        font-size: 1.2rem;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+    .buy-btn:hover {
+        background-color: #5a3bbf;
+    }
+    .price-info {
+        font-size: 18px;
+        margin: 15px 0;
+        color: #977DFF;
+        font-weight: bold;
+        text-align: center;
+    }
+    
+    /* Новые стили для системы переключения дат и времени */
+    .sessions {
+        margin-bottom: 0px;
+        margin-top: 0px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    
+    .session-dates {
+        display: flex;
+        gap: 35px;
+        margin: 0px 0px;
+    }
+    
+    .session-date {
+        background-color: #232323;
+        color: #7F8081;
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 20px;
+    }
+    
+    .session-date:hover {
+        color: #ffffff
+    }
+    
+    .session-date.active {
+        color: #977DFF;
+    }
+    
+    .session-times {
+        display: flex;
+        gap: 15px;
+        margin: 50px 0px;
+    }
+    
+    .time-slot {
+        background-color: #232323;
+        color: #7F8081;
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s;
+        font-family: 'Montserrat';
+    }
+    
+    .time-slot:hover {
+        color: #ffffff;
+    }
+    
+    .time-slot.active {
+        color: #977DFF;
+    }
+    
+    .time-slot-between {
+        color: #555;
+        display: flex;
+        align-items: center;
+    }
     </style>
 </head>
 <body>
@@ -168,55 +155,53 @@
 
     <header>
         <div style="margin-top: 0px; width: 1700px; position: relative;">
-            <div style="position: absolute; left: 0;"><img src="recources/Фильм_Муфаса.jpg" width="1700" height="800" alt="Муфаса Король Лев"></div>
+            <div style="position: absolute; left: 0;"><img src="recources/Фильм_Обезьяна.jpg" width="1700" height="800" alt="Обезьяна"></div>
             <div style="position: absolute; left: 24px; top:30px;"><a href="films.html"><img src="recources/arrow_back.png" alt="Назад"></a></div>
             <div style="position: absolute; left: 0;" class="header-content">
-                <h1 style="font-family: PaluiSPDemo-Bold;">МУФАСА <br> КОРОЛЬ ЛЕВ</h1>
+                <h1 style="font-family: PaluiSPDemo-Bold;">ОБЕЗЬЯНА</h1>
                 <div class="rating">
-                    Рейтинг Кинопоиска <span class="rating-value">7.8</span>
+                    Рейтинг Кинопоиска <span class="rating-value">6</span>
                 </div>
-                <a style="margin-top: 500px;" href="https://rutube.ru/video/d840e559038444de259a815b8dbbbf67/" class="btn">Смотреть трейлер</a>
+                <a style="margin-top: 560px;" href="https://rutube.ru/video/87d0d79a9c2e266bca275df070b42bff/" class="btn">Смотреть трейлер</a>
             </div>
         </div>
     </header>
   
     <div class="container">
         <p class="description">
-            Осиротевший Муфаса знакомится с наследником королевских кровей по имени Така. <br>
-            Вместе они отправляются в судьбоносное опасное путешествие, которое проверит <br>
-            их дружбу на прочность.
+            Представьте себе артефакт, с помощью которого можно убить любого человека! Притом <br>
+            совершенно «случайным» образом. Сколько проблем можно решить с помощью такого <br>
+            загадочного предмета, помещенного в игрушечную обезьянку! Но что делать, если <br>
+            такое оружие направлено в вашу сторону?
         </p>
 
         <h2 style="margin-top: 100px;">Сеансы</h2>
         
         <div class="sessions">
             <div class="session-dates">
-                <button class="session-date active" onclick="showDate('2024-03-18', this)">18 марта</button>
-                <button class="session-date" onclick="showDate('2024-03-19', this)">19 марта</button>
+                <button class="session-date active" onclick="showDate('2024-03-18', this)">11 марта</button>
+                <button class="session-date" onclick="showDate('2024-03-19', this)">12 марта</button>
             </div>
             
-            <!-- СЕАНСЫ НА 18 МАРТА -->
             <div id="date-2024-03-18" class="date-container active">
                 <div class="session-times">
-                    <button class="time-slot active" onclick="showSession('2024-03-18', '12:30', this)">12:30</button>
+                    <button class="time-slot active" onclick="showSession('2024-03-18', '12:30', this)">18:00</button>
                     <div class="time-slot-between">|</div>
-                    <button class="time-slot" onclick="showSession('2024-03-18', '15:00', this)">15:00</button>
+                    <button class="time-slot" onclick="showSession('2024-03-18', '15:00', this)">20:00</button>
                 </div>
             </div>
             
-            <!-- СЕАНСЫ НА 19 МАРТА -->
             <div id="date-2024-03-19" class="date-container">
                 <div class="session-times">
-                    <button class="time-slot active" onclick="showSession('2024-03-19', '10:00', this)">10:00</button>
+                    <button class="time-slot active" onclick="showSession('2024-03-19', '10:00', this)">12:30</button>
                     <div class="time-slot-between">|</div>
-                    <button class="time-slot" onclick="showSession('2024-03-19', '20:00', this)">20:00</button>
+                    <button class="time-slot" onclick="showSession('2024-03-19', '20:00', this)">15:00</button>
                 </div>
             </div>
         </div>
         
         <!-- ПОСАДОЧНЫЕ МЕСТА -->
        
-        <!-- Сеанс 18 марта 12:30 -->
         <div id="session-2024-03-18-12:30" class="seats-container active">
             <p style="color: #7F8081;">Стоимость: 400 руб. за место</p>
             <div class="price-info">Общая стоимость: <span id="price-2024-03-18-12:30">0</span> руб.</div>
@@ -229,7 +214,6 @@
             </div>
         </div>
         
-        <!-- Сеанс 18 марта 15:00 -->
         <div id="session-2024-03-18-15:00" class="seats-container">
             <p style="color: #7F8081;">Стоимость: 200 руб. за место</p>
             <div class="price-info">Общая стоимость: <span id="price-2024-03-18-15:00">0</span> руб.</div>
@@ -242,7 +226,6 @@
             </div>
         </div>
         
-        <!-- Сеанс 19 марта 10:00 -->
         <div id="session-2024-03-19-10:00" class="seats-container">
             <p style="color: #7F8081;">Стоимость: 200 руб. за место</p>
             <div class="price-info">Общая стоимость: <span id="price-2024-03-19-10:00">0</span> руб.</div>
@@ -255,7 +238,6 @@
             </div>
         </div>
 
-        <!-- Сеанс 19 марта 20:00 -->
         <div id="session-2024-03-19-20:00" class="seats-container">
             <p style="color: #7F8081;">Стоимость: 450 руб. за место</p>
             <div class="price-info">Общая стоимость: <span id="price-2024-03-19-20:00">0</span> руб.</div>
@@ -287,11 +269,9 @@
         </div>
         </div>
     </footer>
+
     <script>
-        // Объект для хранения состояния мест
         let sessionsState = {};
-        
-        // Цены за места
         const prices = {
             '2024-03-18': {
                 '12:30': 400,
@@ -302,8 +282,6 @@
                 '20:00': 450
             }
         };
-        
-        // Инициализация состояния
         function initSessionsState() {
             const savedState = localStorage.getItem('cinemaSessionsState');
             if (savedState) {
@@ -322,63 +300,49 @@
             }
         }
         
-        // Сохранение состояния
         function saveState() {
             localStorage.setItem('cinemaSessionsState', JSON.stringify(sessionsState));
         }
         
         
-        // Переключение между датами
         function showDate(date, button) {
-            // Снимаем активность со всех кнопок дат
             document.querySelectorAll('.session-date').forEach(btn => {
                 btn.classList.remove('active');
             });
 
-            // Делаем активной текущую кнопку
             button.classList.add('active');
 
-            // Скрываем все контейнеры дат
             document.querySelectorAll('.date-container').forEach(container => {
                 container.classList.remove('active');
             });
             
-            // Показываем только выбранную дату
             const dateContainer = document.getElementById(`date-${date}`);
             dateContainer.classList.add('active');
             
-            // Активируем первый сеанс для выбранной даты
             const firstTime = Object.keys(sessionsState[date])[0];
             const firstTimeButton = dateContainer.querySelector('.time-slot');
             showSession(date, firstTime, firstTimeButton);
         }
         
-        // Переключение между сеансами внутри даты
         function showSession(date, time, button) {
-            // Находим контейнер текущей даты
             const dateContainer = document.getElementById(`date-${date}`);
             if (!dateContainer) return;
             
-            // Снимаем выделение со всех кнопок времени в этой дате
             dateContainer.querySelectorAll('.time-slot').forEach(btn => {
                 btn.classList.remove('active');
             });
             
-            // Выделяем текущую кнопку времени
             if (button) button.classList.add('active');
             
-            // Скрываем все контейнеры мест
             document.querySelectorAll('.seats-container').forEach(container => {
                 if (container.id.startsWith('session-')) {
                     container.classList.remove('active');
                 }
             });
             
-            // Показываем только выбранный сеанс
             const sessionContainer = document.getElementById(`session-${date}-${time}`);
             if (sessionContainer) {
                 sessionContainer.classList.add('active');
-                // Если места еще не отрисованы - рисуем их
                 if (sessionContainer.querySelector('.seat') === null) {
                     renderSeats(date, time);
                 }
@@ -387,7 +351,6 @@
             updatePrice(date, time);
         }
         
-        // Обновление цены
         function updatePrice(date, time) {
             const selectedCount = sessionsState[date][time].selected.length;
             const priceElement = document.getElementById(`price-${date}-${time}`);
@@ -396,7 +359,6 @@
             }
         }
         
-        // Отрисовка мест
         function renderSeats(date, time) {
             const container = document.getElementById(`seats-${date}-${time}`);
             if (!container) {
@@ -417,7 +379,6 @@
                     seat.dataset.date = date;
                     seat.dataset.time = time;
                     
-                    // Создаем элемент для отображения номера места
                     const seatNumber = document.createElement('span');
                     seatNumber.className = 'seat-number';
                     seatNumber.textContent = seatNum;
@@ -453,7 +414,6 @@
             }
         }
         
-        // Покупка билетов
         function buyTickets(date, time) {
             const selected = sessionsState[date][time].selected;
             if (selected.length === 0) {
@@ -471,18 +431,15 @@
             alert(`Билеты на ${date} в ${time} куплены!`);
         }
         
-        // Инициализация при загрузке
         document.addEventListener('DOMContentLoaded', function() {
             initSessionsState();
             
-            // Активируем первую дату и первый сеанс по умолчанию
             const firstDate = Object.keys(sessionsState)[0];
             const firstDateButton = document.querySelector(`.session-date[onclick*="${firstDate}"]`);
             if (firstDateButton) {
                 showDate(firstDate, firstDateButton);
             }
             
-            // Назначаем обработчики кнопок покупки
             document.querySelectorAll('.buy-btn').forEach(btn => {
                 btn.addEventListener('click', function() {
                     const date = this.dataset.date;
@@ -492,7 +449,6 @@
             });
         });
 
-        // Обработчики для кнопок в шапке
         document.addEventListener('DOMContentLoaded', function() {
             document.querySelector('.btn:nth-of-type(1)').addEventListener('click', function() {
                 alert('Открывается трейлер фильма');

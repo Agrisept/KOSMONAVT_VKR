@@ -22,12 +22,8 @@ body::-webkit-scrollbar  {
 a {
   text-decoration: none;
   color: white;
-  transition: color 0.3s;
 }
-a:hover {
-  text-decoration: none;
-  color: #977DFF;
-}
+
 .nav-item{
   font-family: Onest;
   font-weight: 300;
